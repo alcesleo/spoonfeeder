@@ -3,6 +3,8 @@ spoonfeeder
 
 A simple blog application in rails using public_activity
 
+A line added by alexicon.
+
 ## Requirements
 
 - Rails 3.2.16
