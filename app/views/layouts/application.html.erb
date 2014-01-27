@@ -6,7 +6,9 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<%= button_to 'Logout', logout_path, method: :delete %>
+<body class='<%= controller.controller_name %>'>
+
 
 <%= yield %>
 
