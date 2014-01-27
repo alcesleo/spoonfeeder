@@ -3,6 +3,8 @@ spoonfeeder
 
 A simple blog application in rails using public_activity
 
+Maybe even some form of automatic mail sender for notifications.
+
 ## Requirements
 
 - Rails 3.2.16
