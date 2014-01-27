@@ -1,7 +1,7 @@
 spoonfeeder
 ===========
 
-A simple blog application in rails using public_activity
+A simple blog application in rails using public_activity. And some stuff.
 
 ## Requirements
 
