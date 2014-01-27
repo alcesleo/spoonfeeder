@@ -18,3 +18,9 @@ Clone this repo
 
     bundle install
     rails s
+
+## Testing
+
+Dont forget to run `rake db:test:clone` to sync the testing database.
+
+    bundle exec rspec
