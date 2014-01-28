@@ -24,11 +24,14 @@ Dont forget to run `rake db:test:clone` to sync the testing database.
 
     bundle exec rspec
 
+    # watch files and run tests on save
+    guard
+
 
 ## Login / Authentication
 
 To add default user with username `admin` and passoword `seed` run:
 
-    'rake db:seed' 
+    'rake db:seed'
 
 Add `skip_before_filter :authorize` to whitelist controllers (i.e. to skip authentication)
