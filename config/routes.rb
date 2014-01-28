@@ -10,6 +10,11 @@ Spoonfeeder::Application.routes.draw do
 
   resources :users
 
+  resources :posts
+  resources :comments
+  resources :activities
+  resources :users
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
