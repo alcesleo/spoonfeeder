@@ -22,6 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'public_activity'
 
 # TODO: versions?
 group :development, :test do
