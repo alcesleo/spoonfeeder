@@ -1,7 +1,13 @@
 Spoonfeeder::Application.routes.draw do
 
+  resources :posts
+  resources :comments
+
+  get "welcome/index"
+  root :to => 'welcome#index'
+
   get 'admin' => 'admin#index'
-  
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
