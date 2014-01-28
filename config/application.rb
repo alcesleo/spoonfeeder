@@ -71,6 +71,9 @@ module Spoonfeeder
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
 
+    # turn off locale validation
+    config.i18n.enforce_available_locales = false
+
   end
 end
 
