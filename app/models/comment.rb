@@ -11,7 +11,10 @@
 #
 
 class Comment < ActiveRecord::Base
+
   attr_accessible :comment
+  include PublicActivity::Common
+
   belongs_to :post
   belongs_to :user
 end
