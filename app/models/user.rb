@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   private
   def ensure_one_admin_remains
+    # TODO: are all users admins?
     if User.count.zero?
       raise "Can't delete last user"
     end
