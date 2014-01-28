@@ -32,3 +32,11 @@ To add default user with username `admin` and passoword `seed` run:
     'rake db:seed' 
 
 Add `skip_before_filter :authorize` to whitelist controllers (i.e. to skip authentication)
+
+## Other
+
+The annotate_models gem is used to increase readability. To annotate go to root and run: 
+
+    annotate
+
+Full instructions here: https://github.com/ctran/annotate_models
