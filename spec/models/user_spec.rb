@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-
   it "is valid with a username and confirmed password" do
     user = User.new(
       name: 'Username',
@@ -41,12 +40,22 @@ describe User do
 
   it "always has at least one admin user remaining" do
     # create user
-    user = User.create(
+    user1 = User.create(
       name: 'Username',
       password: 'Password',
       password_confirmation: 'Password')
+    # create second user
+    user2 = User.create(
+      name: 'Username2',
+      password: 'Password2',
+      password_confirmation: 'Password2')
+    
+    user1.save
+    user2.save
+    user1.destroy
 
-    user.delete
-    expect(User.all.count).to be 1
+    expect{ user2.destroy }.to raise_error
+
   end
+
 end
