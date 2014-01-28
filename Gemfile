@@ -22,6 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'annotate', ">=2.6.0"
 
 # TODO: versions?
 group :development, :test do
