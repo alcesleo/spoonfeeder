@@ -36,6 +36,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'guard-rspec'
 end
 
 # To use ActiveModel has_secure_password
