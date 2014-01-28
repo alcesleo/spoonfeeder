@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(:version => 20140128123704) do
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
     t.integer  "user_id"
-    t.string   "username",                  :default => "Anonymous"
     t.text     "comment",    :limit => 300
-    t.datetime "created_at",                                         :null => false
-    t.datetime "updated_at",                                         :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "posts", :force => true do |t|
