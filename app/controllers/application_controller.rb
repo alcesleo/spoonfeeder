@@ -11,16 +11,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   hide_action :current_user
 
-  
+  protected
 
   def authorize
     unless User.find_by_id(session[:user_id])
       redirect_to login_url, notice: "Please log in" 
     end
   end
-
-  # def track_activity(trackable, action = params[:action])
-  #   current_user.activities.create! action: action, trackable: trackable
-  # end
 
 end
