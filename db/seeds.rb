@@ -7,3 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 admin = User.create(name: 'admin', password: 'seed', password_confirmation: 'seed')
+post = Post.create(title: 'Hello Rails!', entry: 'This is the first blog entry using seeds.rb')
+post.user = admin
+comment = Comment.create(username: admin.name, comment: 'admin made this comment')
+anotherComment = Comment.create(username: admin.name, comment: 'admin made this comment')
+comment.post = post
+comment.user = admin
+anotherComment.post = post
+anotherComment.user = admin

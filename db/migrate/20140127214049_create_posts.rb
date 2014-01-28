@@ -1,9 +1,10 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-
-      t.string "title"
-      t.text "entry"
+      t.references :user
+      
+      t.string "title", :limit => 100, :null => false
+      t.text "entry", :limit => 600, :null => false
       t.timestamps
     end
   end
