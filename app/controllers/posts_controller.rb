@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.find(:all, :order => 'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -78,7 +78,7 @@ class PostsController < ApplicationController
     @post.create_activity :destroy, owner: current_user
 
     @post.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
