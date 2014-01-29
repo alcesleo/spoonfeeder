@@ -6,7 +6,10 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<%= button_to 'Logout', logout_path, method: :delete %>
+<div>
+  Logged in as: <%= current_user.name %>
+  <%= button_to 'Logout', logout_path, method: :delete %>
+</div>
 <body class='<%= controller.controller_name %>'>
 
 
