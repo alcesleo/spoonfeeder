@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        track_activity @comment
+        @comment.create_activity :create, owner: current_user
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
@@ -61,7 +61,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        track_activity @comment
+        @comment.create_activity :update, owner: current_user
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -75,9 +75,9 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    @comment.create_activity :destroy, owner: current_user
 
-    track_activity @comment
+    @comment.destroy
 
     respond_to do |format|
       format.html { redirect_to comments_url }

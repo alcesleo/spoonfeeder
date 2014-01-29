@@ -3,17 +3,7 @@
   <h1><%= current_user.name %>'s recent activities</h1>
     <ul>
       <% @activities.each do |activity| %>
-        
-        <% if activity.trackable %>
-          
-          <p>The post "<%= activity.trackable.title %>" was created by <%= current_user.name %> <%= time_ago_in_words(activity.created_at) %> ago.</p>
-
-          <pre>
-            Details: <%= activity.inspect %>
-          </pre>
-
-        <%end %>
-          
+          <%= render_activity activity %>
       <% end %>
     </ul>
   <%= link_to 'Back', admin_path %>

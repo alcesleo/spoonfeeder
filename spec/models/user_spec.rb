@@ -51,13 +51,22 @@ describe User do
   end
 
   it "always has at least one admin user remaining" do
-    # create user
-    user = User.create(
+    user1 = User.create(
+      # create first user
       name: 'Username',
       password: 'Password',
       password_confirmation: 'Password')
 
-    user.delete
-    expect(User.all.count).to be 1
+      # create second user
+    user2 = User.create(
+      name: 'Username2',
+      password: 'Password2',
+      password_confirmation: 'Password2')
+   
+    user1.save
+    user2.save
+    user1.destroy
+ 
+    expect{ user2.destroy }.to raise_error
   end
 end
