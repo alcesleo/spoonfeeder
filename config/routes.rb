@@ -1,7 +1,7 @@
 Spoonfeeder::Application.routes.draw do
 
   get 'admin' => 'admin#index'
-  
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
@@ -10,8 +10,9 @@ Spoonfeeder::Application.routes.draw do
 
   resources :users
 
-  resources :posts
-  resources :comments
+  resources :posts do
+    resources :comments
+  end
   resources :activities
   resources :users
 
