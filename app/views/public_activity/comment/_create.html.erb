@@ -1,4 +1,4 @@
 <% if activity.trackable and activity.owner_id == current_user.id %>
-  <li>The comment <em>"<%= activity.trackable.comment_entry %>"</em> was added by <%= current_user.name %> <%= time_ago_in_words(activity.created_at) %> ago.</li>
+  <li>The comment <em>"<%= activity.trackable.comment_entry %>"</em> was added to <%= link_to @post_title, activity.recipient %> by <%= current_user.name %> <%= time_ago_in_words(activity.created_at) %> ago.</li>
  <% else %>
 <% end %>

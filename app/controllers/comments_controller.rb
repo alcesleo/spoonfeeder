@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
       @post = Post.find(params[:post_id])
       @comment = @post.comments.create(params[:comment])
 
-      @comment.create_activity :create, owner: current_user
+      @comment.create_activity :create, owner: current_user, recipient: @post
 
       redirect_to post_path(@post)
   end
@@ -55,7 +55,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        @comment.create_activity :update, owner: current_user
+        @comment.create_activity :update, owner: current_user, recipient: @post
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
