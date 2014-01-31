@@ -1,0 +1,4 @@
+<% if activity.trackable and activity.owner_id == current_user.id %>
+<li>The comment <em>"<%= activity.trackable.comment_entry %>"</em> belonging to <%= link_to @post_title, activity.recipient %> was updated by you <%= time_ago_in_words(activity.created_at) %> ago.</li>
+<% else %>
+<% end %>
