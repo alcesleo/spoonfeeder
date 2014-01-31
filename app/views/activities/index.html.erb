@@ -3,12 +3,7 @@
   <h1><%= current_user.name %>'s recent activities</h1>
     <ul>
       <% @activities.each do |activity| %>
-          <% if activity.recipient %>
-            <% @post_title = activity.recipient.title %>
-          <% else %>
-            <% @post_title = "" %>
-          <% end %>
-            <%= render_activity activity %>
+        <%= render_activity activity %>
       <% end %>
     </ul>
   <%= link_to 'Back', posts_path %>
