@@ -15,8 +15,15 @@ Maybe even some form of automatic mail sender for notifications.
 
 Clone this repo
 
+    # install deps
     bundle install
+
+    # start the server
     rails s
+
+If it complains about `config/initializers/secret_token.rb`, run this from the project root and restart the server:
+
+    echo "Spoonfeeder::Application.config.secret_token = '$(rake secret)'" > ./config/initializers/secret_token.rb
 
 ## Testing
 
@@ -38,7 +45,7 @@ Add `skip_before_filter :authorize` to whitelist controllers (i.e. to skip authe
 
 ## Other
 
-The annotate_models gem is used to increase readability. To annotate go to root and run: 
+The annotate_models gem is used to increase readability. To annotate go to root and run:
 
     annotate
 
