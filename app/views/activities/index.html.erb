@@ -11,5 +11,9 @@
             <%= render_activity activity %>
       <% end %>
     </ul>
+
+  <h3><%= ChooChoo::Say.choo %> has been succesfully loaded!</h3>
+  <h3>Choo! Choo! found <%= ChooChoo::Calculation.count(@activities) %> activities</h3>
+
   <%= link_to 'Back', posts_path %>
 </div>

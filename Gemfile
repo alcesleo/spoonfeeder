@@ -25,6 +25,9 @@ gem 'jquery-rails'
 gem 'annotate', ">=2.6.0"
 gem 'public_activity'
 
+#gem 'choo_choo', :git => 'git://github.com/lnucrowding/choo_choo.git' #, :branch => "xxx"
+gem 'choo_choo', :git => 'git://github.com/alexicon79/choo_choo.git', :branch => "calculate"
+
 # TODO: versions?
 group :development, :test do
   gem 'rspec-rails'
