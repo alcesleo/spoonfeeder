@@ -2,13 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.16'
 
+# If working on a feature branch, you can change the branch-var for easier
+# hacking, but make sure you don't commit that change.
+gem 'choo_choo', github: 'lnucrowding/choo_choo', branch: 'master'
+
+
+
 gem 'dotenv-rails', :groups => [:development, :test]
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,7 +24,6 @@ end
 
 gem 'jquery-rails'
 gem 'annotate', ">=2.6.0"
-gem 'public_activity'
 
 # TODO: versions?
 group :development, :test do
