@@ -10,8 +10,6 @@
 #
 
 class Post < ActiveRecord::Base
-
-  include PublicActivity::Common
   attr_accessible :title, :entry
   validates :title, presence: true
   validates :entry, presence: true

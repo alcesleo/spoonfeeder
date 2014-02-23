@@ -44,7 +44,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        @post.create_activity :create, owner: current_user
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
@@ -61,7 +60,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        @post.create_activity :update, owner: current_user
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -75,8 +73,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
-    @post.create_activity :destroy, owner: current_user
-
     @post.destroy
 
     respond_to do |format|

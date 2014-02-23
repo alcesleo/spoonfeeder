@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140129213530) do
+ActiveRecord::Schema.define(:version => 20140223212455) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -30,6 +30,30 @@ ActiveRecord::Schema.define(:version => 20140129213530) do
   add_index "activities", ["recipient_id", "recipient_type"], :name => "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], :name => "index_activities_on_trackable_id_and_trackable_type"
 
+  create_table "choo_choo_activities", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "choo_choo_carriages", :force => true do |t|
+    t.string   "excerpt"
+    t.string   "activity_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "recipient_id"
+    t.string   "recipient_type"
+  end
+
+  create_table "choo_choo_locomotives", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "choo_choo_tests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
     t.integer  "user_id"
@@ -44,6 +68,11 @@ ActiveRecord::Schema.define(:version => 20140129213530) do
     t.text     "entry",      :limit => 600, :null => false
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+  end
+
+  create_table "tests", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

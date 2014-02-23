@@ -11,7 +11,6 @@
 #
 
 class Comment < ActiveRecord::Base
-  include PublicActivity::Common
   attr_accessible :username, :comment_entry
 
   belongs_to :post
