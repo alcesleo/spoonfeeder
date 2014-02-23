@@ -1,5 +1,0 @@
-<% if activity.trackable and activity.owner_id == current_user.id %>
-  <li>The comment <em>"<%= activity.trackable.comment_entry %>"</em> was deleted by you <%= time_ago_in_words(activity.created_at) %> ago.</li>
-<% elsif activity.owner_id == current_user.id %>
-    <li>A comment was deleted by <%= current_user.name %> <%= time_ago_in_words(activity.created_at) %> ago.</li>
-<% end %>

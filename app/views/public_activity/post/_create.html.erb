@@ -1,4 +1,0 @@
-<% if activity.trackable and activity.owner_id == current_user.id %>
-  <li>The post <em>"<%= activity.trackable.title %>"</em> was added by <%= current_user.name %> <%= time_ago_in_words(activity.created_at) %> ago.</li>
-<% else %>
-<% end %>
