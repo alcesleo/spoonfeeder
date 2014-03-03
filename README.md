@@ -1,4 +1,4 @@
-# SpoonFeeder [![Build Status](https://travis-ci.org/alcesleo/spoonfeeder.png?branch=master)](https://travis-ci.org/alcesleo/spoonfeeder)
+# SpoonFeeder [![Build Status](https://travis-ci.org/lnucrowding/spoonfeeder.png?branch=master)](https://travis-ci.org/lnucrowding/spoonfeeder)
 
 A simple blog application in rails using public_activity
 
