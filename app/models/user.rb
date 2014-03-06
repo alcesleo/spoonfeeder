@@ -23,16 +23,16 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :likes
 
+  def likes_post?(post)
+    self.likes.find_by_post_id(post.id)
+  end
+
   private
   def ensure_one_admin_remains
     # TODO: are all users admins?
     if User.count.zero?
       raise "Can't delete last user"
     end
-  end
-
-  def likes_post?(post)
-    self.likes.find_by_post_id(post.id)
   end
 
 end

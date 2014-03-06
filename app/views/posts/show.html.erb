@@ -5,9 +5,15 @@
     <%= @post.title %>
   </h1>
   <h3>
-  <%= @post.likes.size %> likes
+    <%= @post.likes.size %> likes
   </h3>
-  <p><%= link_to 'Like', post_like_path(@post), :method => :post %></p>
+  <p>
+    <% if @like %>
+      <%= link_to 'Unlike', post_like_path(@post.id) %>
+    <% else %>
+      <%= link_to 'Like', post_like_path(@post.id) %>
+    <% end %>
+  </p>
   <p><%= @post.entry %></p>
   <small>Published by <%= current_user.name %> <%= time_ago_in_words(@post.created_at) %> ago</small>
   <hr>

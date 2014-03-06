@@ -12,7 +12,7 @@ Spoonfeeder::Application.routes.draw do
 
   resources :posts do
     resources :comments
-    post :like
+    get 'like/:id' => 'posts#like', as: 'like'
   end
   resources :activities
   resources :users
