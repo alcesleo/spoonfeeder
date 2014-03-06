@@ -12,6 +12,7 @@ Spoonfeeder::Application.routes.draw do
 
   resources :posts do
     resources :comments
+    post :like
   end
   resources :activities
   resources :users
@@ -19,7 +20,6 @@ Spoonfeeder::Application.routes.draw do
   root :to => 'posts#index'
 
   mount ChooChoo::Engine => "/notifications"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -80,4 +80,9 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # Counts up or down a a post like by the user
+  def like
+    # @todo handle like
+  end
 end

@@ -1,7 +1,13 @@
 <div class="single-post">
   <p id="notice"><%= notice %></p>
 
-  <h1><%= @post.title %></h1>
+  <h1>
+    <%= @post.title %>
+  </h1>
+  <h3>
+  <%= @post.likes.size %> likes
+  </h3>
+  <p><%= link_to 'Like', post_like_path(@post), :method => :post %></p>
   <p><%= @post.entry %></p>
   <small>Published by <%= current_user.name %> <%= time_ago_in_words(@post.created_at) %> ago</small>
   <hr>
