@@ -15,6 +15,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 
+    if current_user && current_user.likes_post?(@post)
+      @like = "Yes!"
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -79,5 +82,29 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  # Counts up or down a a post like by the user
+  def like  
+    post = Post.find_by_id(params[:id])
+
+    if post
+      
+      like = current_user.likes.find_by_post_id(params[:id])      
+      
+      if like
+        # This post is already liked
+        like.destroy
+      else
+        # Like post      
+        new_like = Like.create(:user_id => current_user.id, :post_id => post.id)
+        post.likes << new_like
+        current_user.likes << new_like
+        post.save
+        current_user.save
+      end      
+    end
+    
+    redirect_to post
   end
 end

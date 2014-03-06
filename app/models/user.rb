@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :activities
+  has_many :likes
+
+  def likes_post?(post)
+    self.likes.find_by_post_id(post.id)
+  end
 
   private
   def ensure_one_admin_remains
