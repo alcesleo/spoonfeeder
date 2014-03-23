@@ -10,11 +10,17 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :title, :entry
+  include ChooChoo::ParentNode
+
+  attr_accessible :title, :entry, :user, :user_id
   validates :title, presence: true
   validates :entry, presence: true
 
   belongs_to :user
   has_many :comments
   has_many :likes
+
+  def excerpt(max_length = 60)
+    self.entry[0..60]
+  end
 end
